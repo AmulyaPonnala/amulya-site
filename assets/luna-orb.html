@@ -1,0 +1,68 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>html,body{margin:0;background:#000}#wrap{width:1024px;height:1024px}svg{display:block}</style>
+<div id="wrap">
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" gradientUnits="userSpaceOnUse" cx="512" cy="480" r="740">
+      <stop offset="0" stop-color="#130d09"/>
+      <stop offset="0.45" stop-color="#0b0805"/>
+      <stop offset="1" stop-color="#050302"/>
+    </radialGradient>
+
+    <!-- halo: clean soft gold bloom, no muddy ring -->
+    <radialGradient id="halo" gradientUnits="userSpaceOnUse" cx="512" cy="512" r="470">
+      <stop offset="0"    stop-color="#f2c680" stop-opacity="0"/>
+      <stop offset="0.6"  stop-color="#f2c680" stop-opacity="0"/>
+      <stop offset="0.64" stop-color="#f4cb84" stop-opacity="0.55"/>
+      <stop offset="0.74" stop-color="#e0a85c" stop-opacity="0.2"/>
+      <stop offset="0.88" stop-color="#e0a85c" stop-opacity="0.04"/>
+      <stop offset="1"    stop-color="#e0a85c" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- sphere body, light from upper-left, golden -->
+    <radialGradient id="body" gradientUnits="userSpaceOnUse" cx="512" cy="512" r="300" fx="452" fy="440" fr="0">
+      <stop offset="0"    stop-color="#fff5e2"/>
+      <stop offset="0.15" stop-color="#ffe1ae"/>
+      <stop offset="0.34" stop-color="#f4c47c"/>
+      <stop offset="0.53" stop-color="#e6ac5e"/>
+      <stop offset="0.70" stop-color="#cd8845"/>
+      <stop offset="0.84" stop-color="#9c5730"/>
+      <stop offset="0.93" stop-color="#61301d"/>
+      <stop offset="1"    stop-color="#2a1310"/>
+    </radialGradient>
+
+    <!-- single soft specular -->
+    <radialGradient id="spec" gradientUnits="userSpaceOnUse" cx="440" cy="424" r="120">
+      <stop offset="0"    stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="0.35" stop-color="#fff1d6" stop-opacity="0.4"/>
+      <stop offset="1"    stop-color="#fff1d6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- rim arc fade -->
+    <linearGradient id="rimg" gradientUnits="userSpaceOnUse" x1="758" y1="340" x2="340" y2="758">
+      <stop offset="0"    stop-color="#ffd9a0" stop-opacity="0"/>
+      <stop offset="0.5"  stop-color="#ffe4b8" stop-opacity="0.85"/>
+      <stop offset="1"    stop-color="#ffd9a0" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="ball"><circle cx="512" cy="512" r="300"/></clipPath>
+    <filter id="blurRim" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="haloBlur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0"/></filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <circle cx="512" cy="512" r="460" fill="url(#halo)" filter="url(#haloBlur)"/>
+
+  <circle cx="512" cy="512" r="300" fill="url(#body)"/>
+  <g clip-path="url(#ball)">
+    <!-- rim backlight: thin arc hugging the far (lower-right) edge -->
+    <path d="M 757.7 339.9 A 300 300 0 0 1 339.9 757.7" fill="none"
+          stroke="url(#rimg)" stroke-width="11" stroke-linecap="round" filter="url(#blurRim)"/>
+    <circle cx="440" cy="424" r="120" fill="url(#spec)"/>
+  </g>
+
+  <rect width="1024" height="1024" filter="url(#grain)" opacity="0.045" style="mix-blend-mode:overlay"/>
+</svg>
+</div>
