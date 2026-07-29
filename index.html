@@ -207,6 +207,13 @@ p.body{font-size:1.05rem;color:var(--faint);max-width:640px;margin-top:20px;font
 .cta a.primary{background:var(--amber);color:#0a0908;border-color:var(--amber);font-weight:700}
 .cta a.primary:hover{background:var(--amber-soft);color:#0a0908}
 
+/* inline visit links (beside a product name) */
+.visit-row{display:flex;gap:16px;flex-wrap:wrap;margin:-12px 0 6px}
+.visit{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(224,168,92,.35);padding-bottom:2px;
+  transition:color .3s,border-color .3s}
+.visit:hover{color:var(--amber-soft);border-color:var(--amber)}
+
 footer{border-top:1px solid var(--line);padding:40px 0;text-align:center;
   font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
@@ -304,6 +311,10 @@ footer{border-top:1px solid var(--line);padding:40px 0;text-align:center;
       <span class="stamp partial">Shipped · No Revenue</span>
     </div>
     <h2 data-reveal>FemoraAI</h2>
+    <div class="visit-row" data-reveal>
+      <a class="visit" href="https://apps.apple.com/us/app/femoraai/id6753288491" target="_blank" rel="noopener">App Store ↗</a>
+      <a class="visit" href="https://play.google.com/store/apps/details?id=com.anonymous.FemoraFrontMic" target="_blank" rel="noopener">Play Store ↗</a>
+    </div>
     <p class="lead" data-reveal>An AI that reads a woman's body and explains it back to her. This one did almost everything right.</p>
 
     <div class="counters" data-reveal>
@@ -364,6 +375,9 @@ footer{border-top:1px solid var(--line);padding:40px 0;text-align:center;
       <span class="stamp live">Live</span>
     </div>
     <h2 data-reveal style="text-align:center">Luna</h2>
+    <div class="visit-row" data-reveal style="justify-content:center">
+      <a class="visit" href="https://letluna.com" target="_blank" rel="noopener">letluna.com ↗</a>
+    </div>
     <p class="lead" data-reveal style="margin:0 auto;text-align:center">The first thing I have ever built for one reason: to make money. Luna is a chief of staff. It runs your inbox, your calendar, your follow-ups in the background, and you just approve.</p>
 
     <div class="vision-line" data-reveal>It starts inside your <em>systems.</em> It ends inside your <em>home.</em> Luna in your apps today. Luna Hub in your house tomorrow. One intelligence running the operating layer of your whole life.</div>
@@ -387,23 +401,22 @@ footer{border-top:1px solid var(--line);padding:40px 0;text-align:center;
 <!-- CLOSE -->
 <section class="close">
   <div class="wrap">
-    <div class="kicker" data-reveal style="justify-content:center">// what i actually want</div>
-    <p class="lead" data-reveal style="margin:0 auto 10px">I built all of this from a campus in Punjab, talking to users on other continents. The only thing left is the room. San Francisco. Around people who think this way, building something enormous. So here is the deal.</p>
+    <div class="kicker" data-reveal style="justify-content:center">// where this goes</div>
+    <p class="lead" data-reveal style="margin:0 auto 10px">I built all of this from a campus in Punjab, talking to users on other continents. The next room is San Francisco, around people building something enormous. That is where I am headed.</p>
     <h2 class="knife" id="knife">
-      <span class="line a">Select me, and I get there.</span>
-      <span class="line b">Don't, and I make revenue and get there anyway.</span>
-      <span class="line a" style="font-size:.5em;color:var(--muted);font-weight:500">Either way, I am getting in that room.</span>
+      <span class="line a">I don't wait to be picked.</span>
+      <span class="line b">I build until I'm in the room.</span>
     </h2>
     <div class="cta" data-reveal>
-      <a class="primary" href="mailto:info.femoraai@gmail.com">Get in touch</a>
-      <a href="https://www.linkedin.com/in/amulya-ponnala/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="primary" href="https://www.linkedin.com/in/amulya-ponnala/" target="_blank" rel="noopener">Get in touch</a>
+      <a href="https://letluna.com" target="_blank" rel="noopener">Luna</a>
       <a href="https://apps.apple.com/us/app/femoraai/id6753288491" target="_blank" rel="noopener">FemoraAI</a>
     </div>
     <p class="final" data-reveal>build in public // failed → shipped → live // the next one only goes up</p>
   </div>
 </section>
 
-<footer>Amulya Ponnala — Founder, Growth / GTM // 2026</footer>
+<footer>Amulya Ponnala — Founder, Growth / GTM // <a href="mailto:amulya0576@gmail.com" style="color:var(--amber);text-decoration:none;text-transform:none">amulya0576@gmail.com</a> // 2026</footer>
 
 <script>
 (function(){
